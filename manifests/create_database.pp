@@ -1,5 +1,5 @@
-define influxdb::create_database(
-  uri = 'http://localhost:8086'
+define influxdb::create_database (
+  uri = 'http://localhost:8086',
   user = 'root',
   password = 'root',
 ) {
