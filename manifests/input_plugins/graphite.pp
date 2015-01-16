@@ -30,8 +30,6 @@ class influxdb::input_plugins::graphite(
   Ini_setting {
     ensure  => present,
     path    => $influxdb::config_path,
-    notify  => Service['influxdb'],
-    require => Package['influxdb'],
   }
 
   ini_setting { 'input_plugins_graphite_enabled':

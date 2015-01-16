@@ -38,8 +38,9 @@ class influxdb (
   $wal_requests_per_logfile             = $influxdb::params::wal_requests_per_logfile,
 ) inherits influxdb::params {
 
-  class { 'influxdb::config': }
-  class { 'influxdb::install': }
-  class { 'influxdb::service': }
+  class { 'influxdb::install': } ->
+  class { 'influxdb::config': } ->
+  class { 'influxdb::service': } ->
+  Class['influxdb']
 
 }
